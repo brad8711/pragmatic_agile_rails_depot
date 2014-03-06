@@ -17,11 +17,12 @@
   padding: 10px;
   border-bottom: 2px solid;
   font: small-caps 40px/40px "Helvetica", sans-serif;
-  color: #282
+  color: #282;
   text-align: center;
 
   img{
-    float: left;
+    float: left !important;
+    position: relative;
   }
 }
 
