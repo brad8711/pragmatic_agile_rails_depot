@@ -7,7 +7,7 @@ module CurrentCart
       @cart = Cart.find(session[:card_id])
     rescue ActiveRecord::RecordNotFound
       @cart = Cart.create
-      session[:card_id] = @cart.idd
+      session[:card_id] = @cart.id
     end
 
 end
