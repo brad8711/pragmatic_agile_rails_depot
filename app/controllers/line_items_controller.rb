@@ -31,6 +31,9 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
+        if !session[:counter].nil?
+          session[:counter] = 0
+        end
         format.html {
                       redirect_to @line_item.cart,
                       notice: 'Line item was successfully created.'
