@@ -27,14 +27,14 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     product = Product.find(params[:product_id])
-    @line_item = @cart.add_product(product.id)
+    @line_item = @cart.add_product(product.id, product.price)
     respond_to do |format|
       if @line_item.save
         if !session[:counter].nil?
           session[:counter] = 0
         end
         format.html {
-                      redirect_to @line_item.cart
+                      redirect_to store_url
                       # notice: 'Line item was successfully created.'
                     }
         format.json {
