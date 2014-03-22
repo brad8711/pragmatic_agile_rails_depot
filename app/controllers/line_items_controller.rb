@@ -37,6 +37,7 @@ class LineItemsController < ApplicationController
                       redirect_to store_url
                       # notice: 'Line item was successfully created.'
                     }
+        format.js   { @current_item = @line_item}
         format.json {
                       render action: 'show',
                       status: :created,
